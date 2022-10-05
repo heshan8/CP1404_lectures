@@ -14,6 +14,6 @@ score_pairs = [['Derek', 7], ['Carrie', 8], ['Bob', 6]]
 
 new_score_pair = input("Enter name and score: ").split()
 score_pairs.append(new_score_pair)
-score_pairs[3][1] = int(new_score_pair[1])
-score_pairs.sort(key=itemgetter(1), reverse=True)
+score_pairs[3][1] = int(new_score_pair[1])  # converting new_score_pair score to an int
+score_pairs.sort(key=itemgetter(1), reverse=True)  # sorting by second index and reversing the order
 print(score_pairs)
