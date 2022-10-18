@@ -8,13 +8,14 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = get_data()
-    print(data)
+    print(data)  # Display subjects(data)
     print_subject_details(data)
+
     subject_to_data = convert_data(data)
     print(subject_to_data)
-    subject_code = input("What subject code: ")
-    print(f"{subject_to_data[subject_code][0]} teaches {subject_code}")
 
+    subject = input("What subject code: ").upper()
+    print(f"{subject_to_data[subject][0]} teaches {subject} on {subject_to_data[subject][2]}")
 
 
 def get_data():
@@ -34,6 +35,7 @@ def convert_data(data):
     subject_to_data = {}
     for subject_data in data:
         subject_to_data[subject_data[0]] = subject_data[1:]
+        # slicing starts at position 1 and goes to the end of the list (returns rest of the list after position 1)
     return subject_to_data
 
 
@@ -43,3 +45,5 @@ def print_subject_details(data):
 
 
 main()
+
+"""================================================================================================================="""
